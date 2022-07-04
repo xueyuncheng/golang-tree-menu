@@ -188,6 +188,10 @@ func nodeSelected(node INode, selectedNodes []INode, children []Tree) bool {
 func nodePartialSelected(trees []Tree) bool {
 	selectedNum := 0
 	for _, v := range trees {
+		if v.PartialSelected {
+			return true
+		}
+
 		if v.Selected {
 			selectedNum++
 		}
